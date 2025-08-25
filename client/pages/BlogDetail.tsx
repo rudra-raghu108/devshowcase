@@ -1,14 +1,14 @@
-import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock, User, Tag, Share2 } from 'lucide-react';
-import { blogPosts } from '@/data/mockData';
-import Layout from '@/components/Layout';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
+import { useParams, Link, Navigate } from "react-router-dom";
+import { ArrowLeft, Calendar, Clock, User, Tag, Share2 } from "lucide-react";
+import { blogPosts } from "@/data/mockData";
+import Layout from "@/components/Layout";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 export default function BlogDetail() {
   const { id } = useParams<{ id: string }>();
-  const blog = blogPosts.find(b => b.id === id);
+  const blog = blogPosts.find((b) => b.id === id);
 
   if (!blog) {
     return <Navigate to="/404" replace />;
@@ -23,7 +23,7 @@ export default function BlogDetail() {
           url: window.location.href,
         });
       } catch (error) {
-        console.log('Error sharing:', error);
+        console.log("Error sharing:", error);
       }
     } else {
       // Fallback: copy to clipboard
@@ -45,8 +45,8 @@ export default function BlogDetail() {
 
           {/* Hero Image */}
           <div className="aspect-video overflow-hidden rounded-xl mb-8">
-            <img 
-              src={blog.coverImage} 
+            <img
+              src={blog.coverImage}
               alt={blog.title}
               className="w-full h-full object-cover"
             />
@@ -67,10 +67,10 @@ export default function BlogDetail() {
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 <time dateTime={blog.publishedAt}>
-                  {new Date(blog.publishedAt).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
+                  {new Date(blog.publishedAt).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
                   })}
                 </time>
               </div>
@@ -95,8 +95,13 @@ export default function BlogDetail() {
                   </Badge>
                 ))}
               </div>
-              
-              <Button variant="outline" size="sm" onClick={handleShare} className="gap-2">
+
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleShare}
+                className="gap-2"
+              >
                 <Share2 className="h-4 w-4" />
                 Share
               </Button>
@@ -108,44 +113,51 @@ export default function BlogDetail() {
           {/* Article Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
             {/* Simple markdown-like content rendering */}
-            {blog.content.split('\n\n').map((paragraph, index) => {
-              if (paragraph.startsWith('# ')) {
+            {blog.content.split("\n\n").map((paragraph, index) => {
+              if (paragraph.startsWith("# ")) {
                 return (
-                  <h1 key={index} className="text-3xl font-bold mt-12 mb-6 first:mt-0">
-                    {paragraph.replace('# ', '')}
+                  <h1
+                    key={index}
+                    className="text-3xl font-bold mt-12 mb-6 first:mt-0"
+                  >
+                    {paragraph.replace("# ", "")}
                   </h1>
                 );
               }
-              if (paragraph.startsWith('## ')) {
+              if (paragraph.startsWith("## ")) {
                 return (
                   <h2 key={index} className="text-2xl font-semibold mt-10 mb-4">
-                    {paragraph.replace('## ', '')}
+                    {paragraph.replace("## ", "")}
                   </h2>
                 );
               }
-              if (paragraph.startsWith('### ')) {
+              if (paragraph.startsWith("### ")) {
                 return (
                   <h3 key={index} className="text-xl font-semibold mt-8 mb-3">
-                    {paragraph.replace('### ', '')}
+                    {paragraph.replace("### ", "")}
                   </h3>
                 );
               }
-              if (paragraph.startsWith('- ')) {
-                const listItems = paragraph.split('\n').filter(line => line.startsWith('- '));
+              if (paragraph.startsWith("- ")) {
+                const listItems = paragraph
+                  .split("\n")
+                  .filter((line) => line.startsWith("- "));
                 return (
                   <ul key={index} className="list-disc pl-6 mb-6 space-y-2">
                     {listItems.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item.replace('- ', '')}</li>
+                      <li key={itemIndex}>{item.replace("- ", "")}</li>
                     ))}
                   </ul>
                 );
               }
               if (paragraph.match(/^\d+\. /)) {
-                const listItems = paragraph.split('\n').filter(line => line.match(/^\d+\. /));
+                const listItems = paragraph
+                  .split("\n")
+                  .filter((line) => line.match(/^\d+\. /));
                 return (
                   <ol key={index} className="list-decimal pl-6 mb-6 space-y-2">
                     {listItems.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item.replace(/^\d+\. /, '')}</li>
+                      <li key={itemIndex}>{item.replace(/^\d+\. /, "")}</li>
                     ))}
                   </ol>
                 );
@@ -167,16 +179,19 @@ export default function BlogDetail() {
               <div className="text-sm text-muted-foreground">
                 Published on {new Date(blog.publishedAt).toLocaleDateString()}
               </div>
-              
+
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" onClick={handleShare} className="gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleShare}
+                  className="gap-2"
+                >
                   <Share2 className="h-4 w-4" />
                   Share Article
                 </Button>
                 <Button variant="outline" size="sm" asChild>
-                  <Link to="/">
-                    View More Posts
-                  </Link>
+                  <Link to="/">View More Posts</Link>
                 </Button>
               </div>
             </div>

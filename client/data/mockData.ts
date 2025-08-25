@@ -1,10 +1,11 @@
-import { BlogPost, Project, ContentItem } from '@shared/types';
+import { BlogPost, Project, ContentItem } from "@shared/types";
 
 export const blogPosts: BlogPost[] = [
   {
-    id: '1',
-    title: 'Building Modern Web Applications with React and TypeScript',
-    excerpt: 'Learn how to create scalable and maintainable web applications using React 18 and TypeScript. We\'ll explore best practices, modern patterns, and performance optimization techniques.',
+    id: "1",
+    title: "Building Modern Web Applications with React and TypeScript",
+    excerpt:
+      "Learn how to create scalable and maintainable web applications using React 18 and TypeScript. We'll explore best practices, modern patterns, and performance optimization techniques.",
     content: `# Building Modern Web Applications with React and TypeScript
 
 React has evolved significantly over the years, and with the introduction of React 18, we now have powerful tools for building performant and scalable applications. In this comprehensive guide, we'll explore the latest best practices for combining React with TypeScript.
@@ -36,17 +37,18 @@ For moderate state management needs, the Context API provides a great alternativ
 - Optimize bundle size with tree shaking
 
 This is just the beginning of creating powerful, modern web applications!`,
-    author: 'Sarah Chen',
-    publishedAt: '2024-01-15',
+    author: "Sarah Chen",
+    publishedAt: "2024-01-15",
     readTime: 8,
-    tags: ['React', 'TypeScript', 'Web Development', 'Frontend'],
-    coverImage: '/api/placeholder/800/400',
-    type: 'blog'
+    tags: ["React", "TypeScript", "Web Development", "Frontend"],
+    coverImage: "/api/placeholder/800/400",
+    type: "blog",
   },
   {
-    id: '2',
-    title: 'The Future of CSS: Container Queries and Intrinsic Design',
-    excerpt: 'Discover how container queries are revolutionizing responsive design and enabling truly component-based styling approaches.',
+    id: "2",
+    title: "The Future of CSS: Container Queries and Intrinsic Design",
+    excerpt:
+      "Discover how container queries are revolutionizing responsive design and enabling truly component-based styling approaches.",
     content: `# The Future of CSS: Container Queries and Intrinsic Design
 
 CSS is constantly evolving, and one of the most exciting recent additions is container queries. This feature is set to revolutionize how we think about responsive design.
@@ -64,17 +66,18 @@ Container queries allow you to apply styles based on the size of a containing el
 ## Practical Examples
 
 Let's explore some real-world use cases where container queries shine...`,
-    author: 'Marcus Rodriguez',
-    publishedAt: '2024-01-08',
+    author: "Marcus Rodriguez",
+    publishedAt: "2024-01-08",
     readTime: 6,
-    tags: ['CSS', 'Responsive Design', 'Frontend', 'Web Standards'],
-    coverImage: '/api/placeholder/800/400',
-    type: 'blog'
+    tags: ["CSS", "Responsive Design", "Frontend", "Web Standards"],
+    coverImage: "/api/placeholder/800/400",
+    type: "blog",
   },
   {
-    id: '3',
-    title: 'Mastering API Design: RESTful Principles and GraphQL',
-    excerpt: 'A comprehensive guide to designing robust APIs that scale. Compare REST and GraphQL approaches and learn when to use each.',
+    id: "3",
+    title: "Mastering API Design: RESTful Principles and GraphQL",
+    excerpt:
+      "A comprehensive guide to designing robust APIs that scale. Compare REST and GraphQL approaches and learn when to use each.",
     content: `# Mastering API Design: RESTful Principles and GraphQL
 
 API design is crucial for building scalable applications. Whether you choose REST or GraphQL, understanding the principles behind good API design will make your applications more maintainable and user-friendly.
@@ -91,20 +94,21 @@ REST (Representational State Transfer) is an architectural style that provides g
 ## GraphQL: A Different Approach
 
 GraphQL offers a query language for APIs that allows clients to request exactly the data they need...`,
-    author: 'Alex Thompson',
-    publishedAt: '2024-01-01',
+    author: "Alex Thompson",
+    publishedAt: "2024-01-01",
     readTime: 12,
-    tags: ['API Design', 'REST', 'GraphQL', 'Backend', 'Architecture'],
-    coverImage: '/api/placeholder/800/400',
-    type: 'blog'
-  }
+    tags: ["API Design", "REST", "GraphQL", "Backend", "Architecture"],
+    coverImage: "/api/placeholder/800/400",
+    type: "blog",
+  },
 ];
 
 export const projects: Project[] = [
   {
-    id: 'p1',
-    title: 'E-Commerce Dashboard',
-    description: 'A comprehensive admin dashboard for managing e-commerce operations with real-time analytics and inventory management.',
+    id: "p1",
+    title: "E-Commerce Dashboard",
+    description:
+      "A comprehensive admin dashboard for managing e-commerce operations with real-time analytics and inventory management.",
     longDescription: `A fully-featured e-commerce admin dashboard built with React and TypeScript. This project showcases modern web development practices including real-time data visualization, complex state management, and responsive design.
 
 ## Key Features
@@ -123,17 +127,29 @@ export const projects: Project[] = [
 - Comprehensive testing suite with Vitest
 
 The dashboard processes over 10,000 transactions daily and provides insights that have helped increase conversion rates by 23%.`,
-    techStack: ['React', 'TypeScript', 'TailwindCSS', 'Zustand', 'Recharts', 'WebSocket'],
-    githubUrl: 'https://github.com/example/ecommerce-dashboard',
-    demoUrl: 'https://ecommerce-dashboard-demo.com',
-    images: ['/api/placeholder/800/600', '/api/placeholder/800/600', '/api/placeholder/800/600'],
-    completedAt: '2024-01-10',
-    type: 'project'
+    techStack: [
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Zustand",
+      "Recharts",
+      "WebSocket",
+    ],
+    githubUrl: "https://github.com/example/ecommerce-dashboard",
+    demoUrl: "https://ecommerce-dashboard-demo.com",
+    images: [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+    ],
+    completedAt: "2024-01-10",
+    type: "project",
   },
   {
-    id: 'p2',
-    title: 'AI-Powered Content Generator',
-    description: 'A machine learning application that generates high-quality content for social media and marketing campaigns.',
+    id: "p2",
+    title: "AI-Powered Content Generator",
+    description:
+      "A machine learning application that generates high-quality content for social media and marketing campaigns.",
     longDescription: `An innovative AI-powered content generation platform that helps businesses create engaging social media posts, blog articles, and marketing copy. The application leverages advanced natural language processing to understand brand voice and generate contextually relevant content.
 
 ## Core Functionality
@@ -151,17 +167,25 @@ The dashboard processes over 10,000 transactions daily and provides insights tha
 - Deployed on Vercel with edge functions
 
 The platform has generated over 50,000 pieces of content and helped clients increase their social media engagement by an average of 45%.`,
-    techStack: ['Next.js', 'OpenAI API', 'PostgreSQL', 'Prisma', 'Redis', 'Vercel'],
-    githubUrl: 'https://github.com/example/ai-content-generator',
-    demoUrl: 'https://ai-content-gen.com',
-    images: ['/api/placeholder/800/600', '/api/placeholder/800/600'],
-    completedAt: '2023-12-15',
-    type: 'project'
+    techStack: [
+      "Next.js",
+      "OpenAI API",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "Vercel",
+    ],
+    githubUrl: "https://github.com/example/ai-content-generator",
+    demoUrl: "https://ai-content-gen.com",
+    images: ["/api/placeholder/800/600", "/api/placeholder/800/600"],
+    completedAt: "2023-12-15",
+    type: "project",
   },
   {
-    id: 'p3',
-    title: 'Real-Time Collaboration Tool',
-    description: 'A Slack-inspired team communication platform with video calls, file sharing, and project management features.',
+    id: "p3",
+    title: "Real-Time Collaboration Tool",
+    description:
+      "A Slack-inspired team communication platform with video calls, file sharing, and project management features.",
     longDescription: `A comprehensive team collaboration platform designed to streamline communication and project management. Built with modern web technologies to support real-time interactions and seamless file sharing across distributed teams.
 
 ## Features Overview
@@ -180,17 +204,23 @@ The platform has generated over 50,000 pieces of content and helped clients incr
 - AWS S3 for secure file storage and CDN delivery
 
 Currently serving over 1,000 active teams with 99.9% uptime and sub-100ms message delivery times.`,
-    techStack: ['React', 'Node.js', 'Socket.IO', 'WebRTC', 'MongoDB', 'AWS S3'],
-    githubUrl: 'https://github.com/example/collaboration-tool',
-    demoUrl: 'https://collab-tool-demo.com',
-    images: ['/api/placeholder/800/600', '/api/placeholder/800/600', '/api/placeholder/800/600', '/api/placeholder/800/600'],
-    completedAt: '2023-11-20',
-    type: 'project'
+    techStack: ["React", "Node.js", "Socket.IO", "WebRTC", "MongoDB", "AWS S3"],
+    githubUrl: "https://github.com/example/collaboration-tool",
+    demoUrl: "https://collab-tool-demo.com",
+    images: [
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+      "/api/placeholder/800/600",
+    ],
+    completedAt: "2023-11-20",
+    type: "project",
   },
   {
-    id: 'p4',
-    title: 'Smart Fitness Tracker',
-    description: 'A mobile-first web application for tracking workouts, nutrition, and fitness goals with AI-powered recommendations.',
+    id: "p4",
+    title: "Smart Fitness Tracker",
+    description:
+      "A mobile-first web application for tracking workouts, nutrition, and fitness goals with AI-powered recommendations.",
     longDescription: `A comprehensive fitness tracking application that combines workout logging, nutrition tracking, and AI-powered personalized recommendations. The app uses machine learning to adapt to user preferences and provide intelligent insights for achieving fitness goals.
 
 ## Key Capabilities
@@ -208,19 +238,26 @@ Currently serving over 1,000 active teams with 99.9% uptime and sub-100ms messag
 - Service Workers for offline functionality and push notifications
 
 The app has helped over 5,000 users achieve their fitness goals with an average adherence rate of 78% over 6 months.`,
-    techStack: ['React', 'PWA', 'TensorFlow.js', 'IndexedDB', 'Chart.js', 'Service Workers'],
-    githubUrl: 'https://github.com/example/fitness-tracker',
-    demoUrl: 'https://smart-fitness-tracker.com',
-    images: ['/api/placeholder/800/600', '/api/placeholder/800/600'],
-    completedAt: '2023-10-05',
-    type: 'project'
-  }
+    techStack: [
+      "React",
+      "PWA",
+      "TensorFlow.js",
+      "IndexedDB",
+      "Chart.js",
+      "Service Workers",
+    ],
+    githubUrl: "https://github.com/example/fitness-tracker",
+    demoUrl: "https://smart-fitness-tracker.com",
+    images: ["/api/placeholder/800/600", "/api/placeholder/800/600"],
+    completedAt: "2023-10-05",
+    type: "project",
+  },
 ];
 
 export const allContent: ContentItem[] = [...blogPosts, ...projects];
 
 export const getAllTags = (): string[] => {
-  const blogTags = blogPosts.flatMap(post => post.tags);
-  const projectTags = projects.flatMap(project => project.techStack);
+  const blogTags = blogPosts.flatMap((post) => post.tags);
+  const projectTags = projects.flatMap((project) => project.techStack);
   return [...new Set([...blogTags, ...projectTags])].sort();
 };

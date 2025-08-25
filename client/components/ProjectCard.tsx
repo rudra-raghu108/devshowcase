@@ -1,9 +1,15 @@
-import { Link } from 'react-router-dom';
-import { Calendar, ExternalLink, Github, Tag } from 'lucide-react';
-import { Project } from '@shared/types';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Link } from "react-router-dom";
+import { Calendar, ExternalLink, Github, Tag } from "lucide-react";
+import { Project } from "@shared/types";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 interface ProjectCardProps {
   project: Project;
@@ -13,30 +19,30 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
       <div className="aspect-video overflow-hidden rounded-t-lg">
-        <img 
-          src={project.images[0]} 
+        <img
+          src={project.images[0]}
           alt={project.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
       </div>
-      
+
       <CardHeader className="pb-3">
         <div className="flex items-center text-sm text-muted-foreground mb-2">
           <Calendar className="h-4 w-4 mr-1" />
-          <span>Completed {new Date(project.completedAt).toLocaleDateString()}</span>
+          <span>
+            Completed {new Date(project.completedAt).toLocaleDateString()}
+          </span>
         </div>
-        
+
         <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-          <Link to={`/project/${project.id}`}>
-            {project.title}
-          </Link>
+          <Link to={`/project/${project.id}`}>{project.title}</Link>
         </CardTitle>
-        
+
         <CardDescription className="line-clamp-3">
           {project.description}
         </CardDescription>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2">
@@ -52,19 +58,14 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </Badge>
           )}
         </div>
-        
+
         {/* Action Buttons */}
         <div className="flex gap-2">
           {project.demoUrl && (
-            <Button 
-              size="sm" 
-              variant="outline" 
-              asChild
-              className="flex-1"
-            >
-              <a 
-                href={project.demoUrl} 
-                target="_blank" 
+            <Button size="sm" variant="outline" asChild className="flex-1">
+              <a
+                href={project.demoUrl}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1"
               >
@@ -73,17 +74,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </a>
             </Button>
           )}
-          
+
           {project.githubUrl && (
-            <Button 
-              size="sm" 
-              variant="outline" 
-              asChild
-              className="flex-1"
-            >
-              <a 
-                href={project.githubUrl} 
-                target="_blank" 
+            <Button size="sm" variant="outline" asChild className="flex-1">
+              <a
+                href={project.githubUrl}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1"
               >

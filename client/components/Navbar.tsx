@@ -1,9 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
-import { Moon, Sun, Menu, X } from 'lucide-react';
-import { useTheme } from '@/contexts/ThemeContext';
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Link, useLocation } from "react-router-dom";
+import { Moon, Sun, Menu, X } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -13,10 +13,10 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/blogs', label: 'Blogs' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/about', label: 'About' }
+    { path: "/", label: "Home" },
+    { path: "/blogs", label: "Blogs" },
+    { path: "/projects", label: "Projects" },
+    { path: "/about", label: "About" },
   ];
 
   return (
@@ -24,12 +24,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="flex items-center space-x-2 font-bold text-xl text-foreground hover:text-primary transition-colors"
           >
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">DS</span>
+              <span className="text-primary-foreground font-bold text-sm">
+                DS
+              </span>
             </div>
             <span className="hidden sm:block">DevShowcase</span>
           </Link>
@@ -42,9 +44,9 @@ const Navbar = () => {
                 to={link.path}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
-                  isActive(link.path) 
-                    ? "text-primary" 
-                    : "text-muted-foreground"
+                  isActive(link.path)
+                    ? "text-primary"
+                    : "text-muted-foreground",
                 )}
               >
                 {link.label}
@@ -61,7 +63,7 @@ const Navbar = () => {
               onClick={toggleTheme}
               className="w-9 h-9 p-0"
             >
-              {theme === 'light' ? (
+              {theme === "light" ? (
                 <Moon className="h-4 w-4" />
               ) : (
                 <Sun className="h-4 w-4" />
@@ -98,7 +100,7 @@ const Navbar = () => {
                     "block px-3 py-2 text-base font-medium rounded-md transition-colors",
                     isActive(link.path)
                       ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-primary hover:bg-accent"
+                      : "text-muted-foreground hover:text-primary hover:bg-accent",
                   )}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

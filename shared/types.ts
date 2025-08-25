@@ -12,7 +12,7 @@ export interface BlogPost {
   readTime: number;
   tags: string[];
   coverImage: string;
-  type: 'blog';
+  type: "blog";
 }
 
 export interface Project {
@@ -25,13 +25,13 @@ export interface Project {
   demoUrl?: string;
   images: string[];
   completedAt: string;
-  type: 'project';
+  type: "project";
 }
 
 export type ContentItem = BlogPost | Project;
 
 export interface SearchFilters {
   query: string;
-  type: 'all' | 'blog' | 'project';
+  type: "all" | "blog" | "project";
   tags: string[];
 }

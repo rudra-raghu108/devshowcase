@@ -1,16 +1,16 @@
-import { useState, useMemo } from 'react';
-import { SearchFilters } from '@shared/types';
-import { projects } from '@/data/mockData';
-import Layout from '@/components/Layout';
-import SearchAndFilter from '@/components/SearchAndFilter';
-import ProjectCard from '@/components/ProjectCard';
-import { Code } from 'lucide-react';
+import { useState, useMemo } from "react";
+import { SearchFilters } from "@shared/types";
+import { projects } from "@/data/mockData";
+import Layout from "@/components/Layout";
+import SearchAndFilter from "@/components/SearchAndFilter";
+import ProjectCard from "@/components/ProjectCard";
+import { Code } from "lucide-react";
 
 export default function Projects() {
   const [filters, setFilters] = useState<SearchFilters>({
-    query: '',
-    type: 'project',
-    tags: []
+    query: "",
+    type: "project",
+    tags: [],
   });
 
   // Filter projects based on search criteria
@@ -22,9 +22,11 @@ export default function Projects() {
         const searchableText = [
           project.title,
           project.description,
-          ...project.techStack
-        ].join(' ').toLowerCase();
-        
+          ...project.techStack,
+        ]
+          .join(" ")
+          .toLowerCase();
+
         if (!searchableText.includes(query)) {
           return false;
         }
@@ -32,8 +34,10 @@ export default function Projects() {
 
       // Tags filter
       if (filters.tags.length > 0) {
-        const hasMatchingTag = filters.tags.some(tag => 
-          project.techStack.some(tech => tech.toLowerCase().includes(tag.toLowerCase()))
+        const hasMatchingTag = filters.tags.some((tag) =>
+          project.techStack.some((tech) =>
+            tech.toLowerCase().includes(tag.toLowerCase()),
+          ),
         );
         if (!hasMatchingTag) {
           return false;
@@ -58,14 +62,14 @@ export default function Projects() {
               Development Projects
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A collection of web applications, tools, and experiments showcasing 
-              modern development practices and innovative solutions.
+              A collection of web applications, tools, and experiments
+              showcasing modern development practices and innovative solutions.
             </p>
           </div>
 
           {/* Search and Filter */}
           <div className="mb-12">
-            <SearchAndFilter 
+            <SearchAndFilter
               filters={filters}
               onFiltersChange={setFilters}
               resultsCount={filteredProjects.length}

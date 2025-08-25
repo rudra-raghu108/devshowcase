@@ -1,38 +1,38 @@
-import { Link } from 'react-router-dom';
-import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     navigation: [
-      { label: 'Home', href: '/' },
-      { label: 'Blogs', href: '/blogs' },
-      { label: 'Projects', href: '/projects' },
-      { label: 'About', href: '/about' }
+      { label: "Home", href: "/" },
+      { label: "Blogs", href: "/blogs" },
+      { label: "Projects", href: "/projects" },
+      { label: "About", href: "/about" },
     ],
     social: [
-      { 
-        label: 'GitHub', 
-        href: 'https://github.com', 
-        icon: Github 
+      {
+        label: "GitHub",
+        href: "https://github.com",
+        icon: Github,
       },
-      { 
-        label: 'LinkedIn', 
-        href: 'https://linkedin.com', 
-        icon: Linkedin 
+      {
+        label: "LinkedIn",
+        href: "https://linkedin.com",
+        icon: Linkedin,
       },
-      { 
-        label: 'Twitter', 
-        href: 'https://twitter.com', 
-        icon: Twitter 
+      {
+        label: "Twitter",
+        href: "https://twitter.com",
+        icon: Twitter,
       },
-      { 
-        label: 'Email', 
-        href: 'mailto:hello@devshowcase.com', 
-        icon: Mail 
-      }
-    ]
+      {
+        label: "Email",
+        href: "mailto:hello@devshowcase.com",
+        icon: Mail,
+      },
+    ],
   };
 
   return (
@@ -43,13 +43,18 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">DS</span>
+                <span className="text-primary-foreground font-bold text-sm">
+                  DS
+                </span>
               </div>
-              <span className="font-bold text-xl text-foreground">DevShowcase</span>
+              <span className="font-bold text-xl text-foreground">
+                DevShowcase
+              </span>
             </div>
             <p className="text-muted-foreground max-w-md mb-6">
-              A modern showcase for development projects and technical writing. 
-              Explore cutting-edge web technologies, best practices, and innovative solutions.
+              A modern showcase for development projects and technical writing.
+              Explore cutting-edge web technologies, best practices, and
+              innovative solutions.
             </p>
             <div className="flex space-x-4">
               {footerLinks.social.map((social) => (
@@ -73,7 +78,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.navigation.map((link) => (
                 <li key={link.href}>
-                  <Link 
+                  <Link
                     to={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
@@ -101,7 +106,8 @@ const Footer = () => {
             © {currentYear} DevShowcase. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm flex items-center gap-1 mt-4 sm:mt-0">
-            Made with <Heart className="h-4 w-4 text-red-500" /> using React & TypeScript
+            Made with <Heart className="h-4 w-4 text-red-500" /> using React &
+            TypeScript
           </p>
         </div>
       </div>

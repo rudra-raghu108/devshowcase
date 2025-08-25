@@ -1,23 +1,23 @@
-import { useState } from 'react';
-import { Search, Filter, X } from 'lucide-react';
-import { SearchFilters } from '@shared/types';
-import { getAllTags } from '@/data/mockData';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { 
-  Popover, 
-  PopoverContent, 
-  PopoverTrigger 
-} from '@/components/ui/popover';
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
-} from '@/components/ui/select';
-import { Separator } from '@/components/ui/separator';
+import { useState } from "react";
+import { Search, Filter, X } from "lucide-react";
+import { SearchFilters } from "@shared/types";
+import { getAllTags } from "@/data/mockData";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 
 interface SearchAndFilterProps {
   filters: SearchFilters;
@@ -25,7 +25,11 @@ interface SearchAndFilterProps {
   resultsCount: number;
 }
 
-const SearchAndFilter = ({ filters, onFiltersChange, resultsCount }: SearchAndFilterProps) => {
+const SearchAndFilter = ({
+  filters,
+  onFiltersChange,
+  resultsCount,
+}: SearchAndFilterProps) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const allTags = getAllTags();
 
@@ -33,22 +37,23 @@ const SearchAndFilter = ({ filters, onFiltersChange, resultsCount }: SearchAndFi
     onFiltersChange({ ...filters, query });
   };
 
-  const handleTypeChange = (type: SearchFilters['type']) => {
+  const handleTypeChange = (type: SearchFilters["type"]) => {
     onFiltersChange({ ...filters, type });
   };
 
   const handleTagToggle = (tag: string) => {
     const newTags = filters.tags.includes(tag)
-      ? filters.tags.filter(t => t !== tag)
+      ? filters.tags.filter((t) => t !== tag)
       : [...filters.tags, tag];
     onFiltersChange({ ...filters, tags: newTags });
   };
 
   const clearFilters = () => {
-    onFiltersChange({ query: '', type: 'all', tags: [] });
+    onFiltersChange({ query: "", type: "all", tags: [] });
   };
 
-  const hasActiveFilters = filters.query || filters.type !== 'all' || filters.tags.length > 0;
+  const hasActiveFilters =
+    filters.query || filters.type !== "all" || filters.tags.length > 0;
 
   return (
     <div className="space-y-4">
@@ -96,9 +101,9 @@ const SearchAndFilter = ({ filters, onFiltersChange, resultsCount }: SearchAndFi
                 <div className="flex items-center justify-between">
                   <h4 className="font-medium">Filter by Tags</h4>
                   {filters.tags.length > 0 && (
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
+                    <Button
+                      variant="ghost"
+                      size="sm"
                       onClick={() => onFiltersChange({ ...filters, tags: [] })}
                     >
                       Clear
@@ -112,8 +117,8 @@ const SearchAndFilter = ({ filters, onFiltersChange, resultsCount }: SearchAndFi
                       key={tag}
                       className={`p-2 rounded-lg border cursor-pointer transition-colors ${
                         filters.tags.includes(tag)
-                          ? 'bg-primary text-primary-foreground border-primary'
-                          : 'hover:bg-accent'
+                          ? "bg-primary text-primary-foreground border-primary"
+                          : "hover:bg-accent"
                       }`}
                       onClick={() => handleTagToggle(tag)}
                     >
@@ -127,7 +132,12 @@ const SearchAndFilter = ({ filters, onFiltersChange, resultsCount }: SearchAndFi
 
           {/* Clear Filters */}
           {hasActiveFilters && (
-            <Button variant="ghost" size="sm" onClick={clearFilters} className="gap-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={clearFilters}
+              className="gap-1"
+            >
               <X className="h-4 w-4" />
               Clear
             </Button>
@@ -136,7 +146,7 @@ const SearchAndFilter = ({ filters, onFiltersChange, resultsCount }: SearchAndFi
 
         {/* Results Count */}
         <div className="text-sm text-muted-foreground">
-          {resultsCount} {resultsCount === 1 ? 'result' : 'results'} found
+          {resultsCount} {resultsCount === 1 ? "result" : "results"} found
         </div>
       </div>
 
@@ -144,11 +154,7 @@ const SearchAndFilter = ({ filters, onFiltersChange, resultsCount }: SearchAndFi
       {filters.tags.length > 0 && (
         <div className="flex flex-wrap gap-2">
           {filters.tags.map((tag) => (
-            <Badge 
-              key={tag} 
-              variant="secondary" 
-              className="gap-1 pr-1"
-            >
+            <Badge key={tag} variant="secondary" className="gap-1 pr-1">
               {tag}
               <Button
                 variant="ghost"

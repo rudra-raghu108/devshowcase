@@ -1,16 +1,16 @@
-import { useState, useMemo } from 'react';
-import { SearchFilters } from '@shared/types';
-import { blogPosts } from '@/data/mockData';
-import Layout from '@/components/Layout';
-import SearchAndFilter from '@/components/SearchAndFilter';
-import BlogCard from '@/components/BlogCard';
-import { BookOpen } from 'lucide-react';
+import { useState, useMemo } from "react";
+import { SearchFilters } from "@shared/types";
+import { blogPosts } from "@/data/mockData";
+import Layout from "@/components/Layout";
+import SearchAndFilter from "@/components/SearchAndFilter";
+import BlogCard from "@/components/BlogCard";
+import { BookOpen } from "lucide-react";
 
 export default function Blogs() {
   const [filters, setFilters] = useState<SearchFilters>({
-    query: '',
-    type: 'blog',
-    tags: []
+    query: "",
+    type: "blog",
+    tags: [],
   });
 
   // Filter blogs based on search criteria
@@ -23,9 +23,11 @@ export default function Blogs() {
           blog.title,
           blog.excerpt,
           blog.author,
-          ...blog.tags
-        ].join(' ').toLowerCase();
-        
+          ...blog.tags,
+        ]
+          .join(" ")
+          .toLowerCase();
+
         if (!searchableText.includes(query)) {
           return false;
         }
@@ -33,8 +35,10 @@ export default function Blogs() {
 
       // Tags filter
       if (filters.tags.length > 0) {
-        const hasMatchingTag = filters.tags.some(tag => 
-          blog.tags.some(blogTag => blogTag.toLowerCase().includes(tag.toLowerCase()))
+        const hasMatchingTag = filters.tags.some((tag) =>
+          blog.tags.some((blogTag) =>
+            blogTag.toLowerCase().includes(tag.toLowerCase()),
+          ),
         );
         if (!hasMatchingTag) {
           return false;
@@ -59,14 +63,14 @@ export default function Blogs() {
               Technical Insights & Tutorials
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Dive deep into web development, best practices, and the latest technologies 
-              shaping the future of software development.
+              Dive deep into web development, best practices, and the latest
+              technologies shaping the future of software development.
             </p>
           </div>
 
           {/* Search and Filter */}
           <div className="mb-12">
-            <SearchAndFilter 
+            <SearchAndFilter
               filters={filters}
               onFiltersChange={setFilters}
               resultsCount={filteredBlogs.length}
@@ -85,7 +89,9 @@ export default function Blogs() {
               <div className="w-24 h-24 mx-auto mb-6 bg-muted rounded-full flex items-center justify-center">
                 <BookOpen className="h-12 w-12 text-muted-foreground" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">No blog posts found</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                No blog posts found
+              </h3>
               <p className="text-muted-foreground">
                 Try adjusting your search criteria or clearing the filters.
               </p>

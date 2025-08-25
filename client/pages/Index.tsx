@@ -1,26 +1,26 @@
-import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Code, Sparkles } from 'lucide-react';
-import { ContentItem, SearchFilters } from '@shared/types';
-import { allContent } from '@/data/mockData';
-import Layout from '@/components/Layout';
-import SearchAndFilter from '@/components/SearchAndFilter';
-import BlogCard from '@/components/BlogCard';
-import ProjectCard from '@/components/ProjectCard';
-import { Button } from '@/components/ui/button';
+import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, BookOpen, Code, Sparkles } from "lucide-react";
+import { ContentItem, SearchFilters } from "@shared/types";
+import { allContent } from "@/data/mockData";
+import Layout from "@/components/Layout";
+import SearchAndFilter from "@/components/SearchAndFilter";
+import BlogCard from "@/components/BlogCard";
+import ProjectCard from "@/components/ProjectCard";
+import { Button } from "@/components/ui/button";
 
 export default function Index() {
   const [filters, setFilters] = useState<SearchFilters>({
-    query: '',
-    type: 'all',
-    tags: []
+    query: "",
+    type: "all",
+    tags: [],
   });
 
   // Filter content based on search criteria
   const filteredContent = useMemo(() => {
     return allContent.filter((item) => {
       // Type filter
-      if (filters.type !== 'all' && item.type !== filters.type) {
+      if (filters.type !== "all" && item.type !== filters.type) {
         return false;
       }
 
@@ -29,11 +29,13 @@ export default function Index() {
         const query = filters.query.toLowerCase();
         const searchableText = [
           item.title,
-          item.type === 'blog' ? item.excerpt : item.description,
-          item.type === 'blog' ? item.author : '',
-          ...(item.type === 'blog' ? item.tags : item.techStack)
-        ].join(' ').toLowerCase();
-        
+          item.type === "blog" ? item.excerpt : item.description,
+          item.type === "blog" ? item.author : "",
+          ...(item.type === "blog" ? item.tags : item.techStack),
+        ]
+          .join(" ")
+          .toLowerCase();
+
         if (!searchableText.includes(query)) {
           return false;
         }
@@ -41,9 +43,11 @@ export default function Index() {
 
       // Tags filter
       if (filters.tags.length > 0) {
-        const itemTags = item.type === 'blog' ? item.tags : item.techStack;
-        const hasMatchingTag = filters.tags.some(tag => 
-          itemTags.some(itemTag => itemTag.toLowerCase().includes(tag.toLowerCase()))
+        const itemTags = item.type === "blog" ? item.tags : item.techStack;
+        const hasMatchingTag = filters.tags.some((tag) =>
+          itemTags.some((itemTag) =>
+            itemTag.toLowerCase().includes(tag.toLowerCase()),
+          ),
         );
         if (!hasMatchingTag) {
           return false;
@@ -57,8 +61,8 @@ export default function Index() {
   // Sort content by date (newest first)
   const sortedContent = useMemo(() => {
     return [...filteredContent].sort((a, b) => {
-      const dateA = new Date(a.type === 'blog' ? a.publishedAt : a.completedAt);
-      const dateB = new Date(b.type === 'blog' ? b.publishedAt : b.completedAt);
+      const dateA = new Date(a.type === "blog" ? a.publishedAt : a.completedAt);
+      const dateB = new Date(b.type === "blog" ? b.publishedAt : b.completedAt);
       return dateB.getTime() - dateA.getTime();
     });
   }, [filteredContent]);
@@ -72,7 +76,9 @@ export default function Index() {
             {/* Hero Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
               <Sparkles className="h-4 w-4" />
-              <span className="text-sm font-medium">Welcome to DevShowcase</span>
+              <span className="text-sm font-medium">
+                Welcome to DevShowcase
+              </span>
             </div>
 
             {/* Hero Title */}
@@ -88,9 +94,9 @@ export default function Index() {
 
             {/* Hero Description */}
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Explore a curated collection of development projects, technical insights, 
-              and innovative solutions. From cutting-edge web applications to thoughtful 
-              blog posts about the latest in tech.
+              Explore a curated collection of development projects, technical
+              insights, and innovative solutions. From cutting-edge web
+              applications to thoughtful blog posts about the latest in tech.
             </p>
 
             {/* Hero CTAs */}
@@ -128,13 +134,14 @@ export default function Index() {
               Latest Content
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover the latest projects, tutorials, and insights from the world of web development.
+              Discover the latest projects, tutorials, and insights from the
+              world of web development.
             </p>
           </div>
 
           {/* Search and Filter */}
           <div className="mb-12">
-            <SearchAndFilter 
+            <SearchAndFilter
               filters={filters}
               onFiltersChange={setFilters}
               resultsCount={filteredContent.length}
@@ -146,7 +153,7 @@ export default function Index() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {sortedContent.map((item) => (
                 <div key={`${item.type}-${item.id}`}>
-                  {item.type === 'blog' ? (
+                  {item.type === "blog" ? (
                     <BlogCard blog={item} />
                   ) : (
                     <ProjectCard project={item} />
@@ -164,9 +171,9 @@ export default function Index() {
               <p className="text-muted-foreground mb-6">
                 Try adjusting your search criteria or clearing the filters.
               </p>
-              <Button 
-                variant="outline" 
-                onClick={() => setFilters({ query: '', type: 'all', tags: [] })}
+              <Button
+                variant="outline"
+                onClick={() => setFilters({ query: "", type: "all", tags: [] })}
               >
                 Clear Filters
               </Button>
@@ -183,8 +190,8 @@ export default function Index() {
               Ready to dive deeper?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Explore dedicated sections for blogs and projects, or learn more about 
-              the technologies and methodologies behind these creations.
+              Explore dedicated sections for blogs and projects, or learn more
+              about the technologies and methodologies behind these creations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

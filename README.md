@@ -249,12 +249,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - Built with [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/)
 - Styled with [TailwindCSS](https://tailwindcss.com/)
-- UI components from [Radix UI](https://www.radix-ui.com/)
 - Icons by [Lucide](https://lucide.dev/)
 - Powered by [Vite](https://vitejs.dev/)
 
 ---
-
-**Requirements Met**: ✅ ReactJS, ✅ TailwindCSS, ✅ Component-based architecture, ✅ Responsive design
-
-Made with ❤️ in India

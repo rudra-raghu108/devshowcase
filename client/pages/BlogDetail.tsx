@@ -43,13 +43,20 @@ export default function BlogDetail() {
             </Link>
           </Button>
 
-          {/* Hero Image */}
-          <div className="aspect-video overflow-hidden rounded-xl mb-8">
-            <img
-              src={blog.coverImage}
-              alt={blog.title}
-              className="w-full h-full object-cover"
-            />
+          {/* Hero Section with Visual Background */}
+          <div className="relative mb-12">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-background rounded-xl" />
+            <div className="relative p-8 sm:p-12">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
+                  <span className="text-primary-foreground font-bold text-lg">📖</span>
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  <div className="font-medium">Blog Post</div>
+                  <div>{blog.readTime} minute read</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Article Header */}
@@ -81,9 +88,11 @@ export default function BlogDetail() {
             </div>
 
             {/* Excerpt */}
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              {blog.excerpt}
-            </p>
+            <div className="bg-muted/50 rounded-lg p-6 mb-8">
+              <p className="text-lg leading-relaxed font-medium">
+                {blog.excerpt}
+              </p>
+            </div>
 
             {/* Tags and Actions */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
@@ -112,28 +121,29 @@ export default function BlogDetail() {
 
           {/* Article Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            {/* Simple markdown-like content rendering */}
             {blog.content.split("\n\n").map((paragraph, index) => {
               if (paragraph.startsWith("# ")) {
                 return (
-                  <h1
-                    key={index}
-                    className="text-3xl font-bold mt-12 mb-6 first:mt-0"
-                  >
-                    {paragraph.replace("# ", "")}
-                  </h1>
+                  <div key={index} className="mb-8">
+                    <h1 className="text-3xl font-bold mt-12 mb-4 first:mt-0 pb-3 border-b border-border">
+                      {paragraph.replace("# ", "")}
+                    </h1>
+                  </div>
                 );
               }
               if (paragraph.startsWith("## ")) {
                 return (
-                  <h2 key={index} className="text-2xl font-semibold mt-10 mb-4">
-                    {paragraph.replace("## ", "")}
-                  </h2>
+                  <div key={index} className="mb-6">
+                    <h2 className="text-2xl font-semibold mt-10 mb-4 flex items-center gap-3">
+                      <div className="w-1 h-6 bg-primary rounded-full" />
+                      {paragraph.replace("## ", "")}
+                    </h2>
+                  </div>
                 );
               }
               if (paragraph.startsWith("### ")) {
                 return (
-                  <h3 key={index} className="text-xl font-semibold mt-8 mb-3">
+                  <h3 key={index} className="text-xl font-semibold mt-8 mb-3 text-primary">
                     {paragraph.replace("### ", "")}
                   </h3>
                 );
@@ -143,11 +153,29 @@ export default function BlogDetail() {
                   .split("\n")
                   .filter((line) => line.startsWith("- "));
                 return (
-                  <ul key={index} className="list-disc pl-6 mb-6 space-y-2">
-                    {listItems.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item.replace("- ", "")}</li>
-                    ))}
-                  </ul>
+                  <div key={index} className="bg-accent/30 rounded-lg p-6 mb-6">
+                    <ul className="space-y-3">
+                      {listItems.map((item, itemIndex) => {
+                        const content = item.replace("- ", "");
+                        const [title, ...description] = content.split(": ");
+                        return (
+                          <li key={itemIndex} className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                            <div>
+                              {description.length > 0 ? (
+                                <>
+                                  <span className="font-semibold">{title}:</span>
+                                  <span className="ml-1">{description.join(": ")}</span>
+                                </>
+                              ) : (
+                                <span>{content}</span>
+                              )}
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                 );
               }
               if (paragraph.match(/^\d+\. /)) {
@@ -155,16 +183,23 @@ export default function BlogDetail() {
                   .split("\n")
                   .filter((line) => line.match(/^\d+\. /));
                 return (
-                  <ol key={index} className="list-decimal pl-6 mb-6 space-y-2">
-                    {listItems.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item.replace(/^\d+\. /, "")}</li>
-                    ))}
-                  </ol>
+                  <div key={index} className="bg-primary/5 rounded-lg p-6 mb-6">
+                    <ol className="space-y-3">
+                      {listItems.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start gap-3">
+                          <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                            {itemIndex + 1}
+                          </div>
+                          <span className="pt-0.5">{item.replace(/^\d+\. /, "")}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
                 );
               }
               if (paragraph.trim()) {
                 return (
-                  <p key={index} className="mb-6 leading-relaxed">
+                  <p key={index} className="mb-6 leading-relaxed text-lg">
                     {paragraph}
                   </p>
                 );

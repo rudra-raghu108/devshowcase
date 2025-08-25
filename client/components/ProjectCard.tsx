@@ -18,15 +18,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      <div className="aspect-video overflow-hidden rounded-t-lg">
-        <img
-          src={project.images[0]}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-
-      <CardHeader className="pb-3">
+      <CardHeader className="pb-3 pt-6">
         <div className="flex items-center text-sm text-muted-foreground mb-2">
           <Calendar className="h-4 w-4 mr-1" />
           <span>
@@ -34,11 +26,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </span>
         </div>
 
-        <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+        <CardTitle className="text-3xl font-bold line-clamp-2 group-hover:text-primary transition-colors mb-3">
           <Link to={`/project/${project.id}`}>{project.title}</Link>
         </CardTitle>
 
-        <CardDescription className="line-clamp-3">
+        <CardDescription className="text-base text-muted-foreground line-clamp-3 leading-relaxed">
           {project.description}
         </CardDescription>
       </CardHeader>

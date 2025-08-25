@@ -39,7 +39,7 @@ Extract complex stateful logic into custom hooks that can be tested independentl
 4. **Rendering Optimization**: Master the art of preventing unnecessary re-renders
 
 Mastering these patterns will set you apart as a React developer and prepare you for the future of web development.`,
-    author: "Sarah Chen",
+    author: "Rudra",
     publishedAt: "2024-01-15",
     readTime: 8,
     tags: ["React", "TypeScript", "Web Development", "Frontend"],
@@ -81,7 +81,7 @@ Build widgets that intelligently adjust their complexity based on the space allo
 3. **Fallback Strategies**: Ensure graceful degradation for browsers without support
 
 Container queries are already transforming how we build design systems and will become essential for any serious front-end developer.`,
-    author: "Marcus Rodriguez",
+    author: "Rudra",
     publishedAt: "2024-01-08",
     readTime: 6,
     tags: ["CSS", "Responsive Design", "Frontend", "Web Standards"],
@@ -131,7 +131,7 @@ One endpoint to rule them all, simplifying client-server communication.
 ## Choosing the Right Approach
 
 The decision between REST and GraphQL depends on your specific needs, team expertise, and application requirements. Both can coexist in modern architectures.`,
-    author: "Alex Thompson",
+    author: "Rudra",
     publishedAt: "2024-01-01",
     readTime: 12,
     tags: ["API Design", "REST", "GraphQL", "Backend", "Architecture"],

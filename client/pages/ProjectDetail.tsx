@@ -136,10 +136,16 @@ export default function ProjectDetail() {
                     <div className="aspect-video bg-gradient-to-br from-primary/20 via-accent/10 to-background flex items-center justify-center">
                       <div className="text-center p-8">
                         <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center mx-auto mb-4">
-                          <span className="text-primary-foreground font-bold text-3xl">🛠️</span>
+                          <span className="text-primary-foreground font-bold text-3xl">
+                            🛠️
+                          </span>
                         </div>
-                        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                        <p className="text-muted-foreground">Click demo to see it in action</p>
+                        <h3 className="text-xl font-semibold mb-2">
+                          {project.title}
+                        </h3>
+                        <p className="text-muted-foreground">
+                          Click demo to see it in action
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -158,21 +164,52 @@ export default function ProjectDetail() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: "📊", title: "Analytics", desc: "Real-time data visualization and insights" },
-                { icon: "🛡️", title: "Security", desc: "Enterprise-grade security and authentication" },
-                { icon: "🚀", title: "Performance", desc: "Optimized for speed and scalability" },
-                { icon: "📱", title: "Responsive", desc: "Works perfectly on all devices" },
-                { icon: "🧩", title: "Modern UI", desc: "Clean, intuitive user interface" },
-                { icon: "⚙️", title: "Customizable", desc: "Flexible configuration options" }
-              ].slice(0, project.techStack.length > 4 ? 6 : 3).map((feature, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-4xl mb-4">{feature.icon}</div>
-                    <h3 className="font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
+                {
+                  icon: "📊",
+                  title: "Analytics",
+                  desc: "Real-time data visualization and insights",
+                },
+                {
+                  icon: "🛡️",
+                  title: "Security",
+                  desc: "Enterprise-grade security and authentication",
+                },
+                {
+                  icon: "🚀",
+                  title: "Performance",
+                  desc: "Optimized for speed and scalability",
+                },
+                {
+                  icon: "📱",
+                  title: "Responsive",
+                  desc: "Works perfectly on all devices",
+                },
+                {
+                  icon: "🧩",
+                  title: "Modern UI",
+                  desc: "Clean, intuitive user interface",
+                },
+                {
+                  icon: "⚙️",
+                  title: "Customizable",
+                  desc: "Flexible configuration options",
+                },
+              ]
+                .slice(0, project.techStack.length > 4 ? 6 : 3)
+                .map((feature, index) => (
+                  <Card
+                    key={index}
+                    className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <CardContent className="p-6 text-center">
+                      <div className="text-4xl mb-4">{feature.icon}</div>
+                      <h3 className="font-semibold mb-2">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {feature.desc}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
             </div>
           </section>
 
@@ -202,7 +239,10 @@ export default function ProjectDetail() {
                 }
                 if (paragraph.startsWith("### ")) {
                   return (
-                    <h3 key={index} className="text-xl font-semibold mt-8 mb-3 text-primary">
+                    <h3
+                      key={index}
+                      className="text-xl font-semibold mt-8 mb-3 text-primary"
+                    >
                       {paragraph.replace("### ", "")}
                     </h3>
                   );
@@ -212,19 +252,29 @@ export default function ProjectDetail() {
                     .split("\n")
                     .filter((line) => line.startsWith("- "));
                   return (
-                    <div key={index} className="bg-accent/30 rounded-lg p-6 mb-6">
+                    <div
+                      key={index}
+                      className="bg-accent/30 rounded-lg p-6 mb-6"
+                    >
                       <ul className="space-y-3">
                         {listItems.map((item, itemIndex) => {
                           const content = item.replace("- ", "");
                           const [title, ...description] = content.split(": ");
                           return (
-                            <li key={itemIndex} className="flex items-start gap-3">
+                            <li
+                              key={itemIndex}
+                              className="flex items-start gap-3"
+                            >
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                               <div>
                                 {description.length > 0 ? (
                                   <>
-                                    <span className="font-semibold">{title}:</span>
-                                    <span className="ml-1">{description.join(": ")}</span>
+                                    <span className="font-semibold">
+                                      {title}:
+                                    </span>
+                                    <span className="ml-1">
+                                      {description.join(": ")}
+                                    </span>
                                   </>
                                 ) : (
                                   <span>{content}</span>
@@ -242,14 +292,22 @@ export default function ProjectDetail() {
                     .split("\n")
                     .filter((line) => line.match(/^\d+\. /));
                   return (
-                    <div key={index} className="bg-primary/5 rounded-lg p-6 mb-6">
+                    <div
+                      key={index}
+                      className="bg-primary/5 rounded-lg p-6 mb-6"
+                    >
                       <ol className="space-y-3">
                         {listItems.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-start gap-3">
+                          <li
+                            key={itemIndex}
+                            className="flex items-start gap-3"
+                          >
                             <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                               {itemIndex + 1}
                             </div>
-                            <span className="pt-0.5">{item.replace(/^\d+\. /, "")}</span>
+                            <span className="pt-0.5">
+                              {item.replace(/^\d+\. /, "")}
+                            </span>
                           </li>
                         ))}
                       </ol>

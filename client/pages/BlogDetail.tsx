@@ -49,7 +49,9 @@ export default function BlogDetail() {
             <div className="relative p-8 sm:p-12">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">📖</span>
+                  <span className="text-primary-foreground font-bold text-lg">
+                    📖
+                  </span>
                 </div>
                 <div className="text-sm text-muted-foreground">
                   <div className="font-medium">Blog Post</div>
@@ -143,7 +145,10 @@ export default function BlogDetail() {
               }
               if (paragraph.startsWith("### ")) {
                 return (
-                  <h3 key={index} className="text-xl font-semibold mt-8 mb-3 text-primary">
+                  <h3
+                    key={index}
+                    className="text-xl font-semibold mt-8 mb-3 text-primary"
+                  >
                     {paragraph.replace("### ", "")}
                   </h3>
                 );
@@ -159,13 +164,20 @@ export default function BlogDetail() {
                         const content = item.replace("- ", "");
                         const [title, ...description] = content.split(": ");
                         return (
-                          <li key={itemIndex} className="flex items-start gap-3">
+                          <li
+                            key={itemIndex}
+                            className="flex items-start gap-3"
+                          >
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                             <div>
                               {description.length > 0 ? (
                                 <>
-                                  <span className="font-semibold">{title}:</span>
-                                  <span className="ml-1">{description.join(": ")}</span>
+                                  <span className="font-semibold">
+                                    {title}:
+                                  </span>
+                                  <span className="ml-1">
+                                    {description.join(": ")}
+                                  </span>
                                 </>
                               ) : (
                                 <span>{content}</span>
@@ -190,7 +202,9 @@ export default function BlogDetail() {
                           <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                             {itemIndex + 1}
                           </div>
-                          <span className="pt-0.5">{item.replace(/^\d+\. /, "")}</span>
+                          <span className="pt-0.5">
+                            {item.replace(/^\d+\. /, "")}
+                          </span>
                         </li>
                       ))}
                     </ol>

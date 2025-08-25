@@ -22,11 +22,11 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
+        <div className="relative flex h-16 items-center justify-center">
+          {/* Logo - Absolute positioned to left */}
           <Link
             to="/"
-            className="flex items-center space-x-2 font-bold text-xl text-foreground hover:text-primary transition-colors"
+            className="absolute left-0 flex items-center space-x-2 font-bold text-xl text-foreground hover:text-primary transition-colors"
           >
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">
@@ -36,7 +36,7 @@ const Navbar = () => {
             <span className="hidden sm:block">DevShowcase</span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -54,8 +54,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Right side buttons */}
-          <div className="flex items-center space-x-4">
+          {/* Right side buttons - Absolute positioned to right */}
+          <div className="absolute right-0 flex items-center space-x-4">
             {/* Theme Toggle */}
             <Button
               variant="ghost"

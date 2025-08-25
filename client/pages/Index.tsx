@@ -71,7 +71,7 @@ export default function Index() {
     <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-accent/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 sm:pb-24 lg:pb-32">
           <div className="text-center space-y-8 max-w-4xl mx-auto">
             {/* Hero Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20">
@@ -126,12 +126,12 @@ export default function Index() {
       </section>
 
       {/* Content Showcase Section */}
-      <section id="showcase" className="py-16 sm:py-20 lg:py-24">
+      <section id="showcase" className="pb-20 -mt-1">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Latest Content
+              <p>Content</p>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Discover the latest projects, tutorials, and insights from the

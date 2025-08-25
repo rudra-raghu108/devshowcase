@@ -14,11 +14,11 @@ The landscape of web development has transformed dramatically with React 18 and 
 
 TypeScript isn't just a nice-to-have anymore—it's become essential for professional React development:
 
-- **Type Safety**: Catch bugs before they reach production with compile-time error detection
-- **Developer Experience**: Enjoy intelligent code completion, refactoring, and navigation
-- **Self-Documenting Code**: Types serve as living documentation that never goes out of sync
-- **Team Collaboration**: Clear interfaces and contracts make working in teams seamless
-- **Refactoring Confidence**: Make large-scale changes with confidence knowing TypeScript has your back
+- Type Safety: Catch bugs before they reach production with compile-time error detection
+- Developer Experience: Enjoy intelligent code completion, refactoring, and navigation
+- Self-Documenting Code: Types serve as living documentation that never goes out of sync
+- Team Collaboration: Clear interfaces and contracts make working in teams seamless
+- Refactoring Confidence: Make large-scale changes with confidence knowing TypeScript has your back
 
 ## Modern React Patterns That Scale
 
@@ -33,10 +33,10 @@ Extract complex stateful logic into custom hooks that can be tested independentl
 
 ## Performance Optimization Strategies
 
-1. **Component Optimization**: Use React.memo strategically for expensive renders
-2. **Bundle Splitting**: Implement route-based and component-based code splitting
-3. **State Management**: Choose the right tool for the job—Context API, Zustand, or Redux Toolkit
-4. **Rendering Optimization**: Master the art of preventing unnecessary re-renders
+1. Component Optimization: Use React.memo strategically for expensive renders
+2. Bundle Splitting: Implement route-based and component-based code splitting
+3. State Management: Choose the right tool for the job—Context API, Zustand, or Redux Toolkit
+4. Rendering Optimization: Master the art of preventing unnecessary re-renders
 
 Mastering these patterns will set you apart as a React developer and prepare you for the future of web development.`,
     author: "Rudra",
@@ -59,9 +59,9 @@ We're witnessing a paradigm shift in CSS that's as significant as the introducti
 
 Container queries fundamentally change how we approach responsive design by allowing elements to respond to their container's size rather than the viewport:
 
-- **Context-Aware Styling**: Components that adapt to their available space
-- **True Component Isolation**: No more global breakpoints affecting local component behavior
-- **Flexible Layouts**: Build components that work beautifully in any container size
+- Context-Aware Styling: Components that adapt to their available space
+- True Component Isolation: No more global breakpoints affecting local component behavior
+- Flexible Layouts: Build components that work beautifully in any container size
 
 ## Real-World Applications
 
@@ -76,9 +76,9 @@ Build widgets that intelligently adjust their complexity based on the space allo
 
 ## Implementation Best Practices
 
-1. **Progressive Enhancement**: Start with mobile-first design, then enhance with container queries
-2. **Performance Considerations**: Use container queries judiciously to avoid layout thrashing
-3. **Fallback Strategies**: Ensure graceful degradation for browsers without support
+1. Progressive Enhancement: Start with mobile-first design, then enhance with container queries
+2. Performance Considerations: Use container queries judiciously to avoid layout thrashing
+3. Fallback Strategies: Ensure graceful degradation for browsers without support
 
 Container queries are already transforming how we build design systems and will become essential for any serious front-end developer.`,
     author: "Rudra",
@@ -101,19 +101,19 @@ In today's interconnected world, APIs are the backbone of modern applications. T
 
 API design has evolved from simple RPC calls to sophisticated systems that power everything from mobile apps to microservices architectures:
 
-- **REST**: The tried-and-true approach that powers most of the web
-- **GraphQL**: The query language that's revolutionizing data fetching
-- **Modern REST**: Enhanced with OpenAPI specifications and hypermedia controls
+- REST: The tried-and-true approach that powers most of the web
+- GraphQL: The query language that's revolutionizing data fetching
+- Modern REST: Enhanced with OpenAPI specifications and hypermedia controls
 
 ## REST: The Foundation of Web APIs
 
 REST remains the gold standard for web APIs when implemented correctly:
 
-1. **Stateless Architecture**: Each request is self-contained and independent
-2. **Resource-Based URLs**: Clear, intuitive endpoints that represent data entities
-3. **HTTP Methods**: Leverage POST, GET, PUT, DELETE for semantic operations
-4. **Status Codes**: Meaningful HTTP status codes that communicate results clearly
-5. **Caching Strategy**: Implement proper caching headers for optimal performance
+1. Stateless Architecturs: Each request is self-contained and independent
+2. Resource-Based URLs: Clear, intuitive endpoints that represent data entities
+3. HTTP Methods: Leverage POST, GET, PUT, DELETE for semantic operations
+4. Status Codes: Meaningful HTTP status codes that communicate results clearly
+5. Caching Strategy: Implement proper caching headers for optimal performance
 
 ## GraphQL: Precision Data Fetching
 
@@ -149,19 +149,19 @@ export const projects: Project[] = [
     longDescription: `An enterprise-grade e-commerce administration platform designed to handle the complexities of modern online retail. This dashboard represents the convergence of cutting-edge technology and intuitive design, enabling businesses to make data-driven decisions at scale.
 
 ## Core Capabilities
-- **Real-time Business Intelligence**: Live dashboards with sales performance, customer behavior analytics, and revenue forecasting
-- **Advanced Inventory Control**: AI-powered stock management with automated reorder points and supplier integration
-- **Customer Relationship Management**: 360-degree customer profiles with purchase history and behavioral insights
-- **Order Orchestration**: Intelligent order routing, fulfillment automation, and shipping optimization
-- **Multi-channel Integration**: Seamless synchronization across online stores, marketplaces, and physical locations
+- Real-time Business Intelligence: Live dashboards with sales performance, customer behavior analytics, and revenue forecasting
+- Advanced Inventory Control: AI-powered stock management with automated reorder points and supplier integration
+- Customer Relationship Management: 360-degree customer profiles with purchase history and behavioral insights
+- Order Orchestration: Intelligent order routing, fulfillment automation, and shipping optimization
+- Multi-channel Integration: Seamless synchronization across online stores, marketplaces, and physical locations
 
 ## Technical Innovation
-- **Modern Architecture**: Built on React 18 with concurrent features for optimal performance
-- **Type-Safe Development**: Comprehensive TypeScript implementation ensuring code reliability
-- **Real-time Infrastructure**: WebSocket-based live updates with optimistic UI patterns
-- **Advanced State Management**: Zustand for predictable state with time-travel debugging
-- **Data Visualization**: Custom Recharts implementation with interactive analytics
-- **Responsive Excellence**: Mobile-first design that scales beautifully across all devices
+- Modern Architecture: Built on React 18 with concurrent features for optimal performance
+- Type-Safe Development: Comprehensive TypeScript implementation ensuring code reliability
+- Real-time Infrastructure: WebSocket-based live updates with optimistic UI patterns
+- Advanced State Management: Zustand for predictable state with time-travel debugging
+- Data Visualization: Custom Recharts implementation with interactive analytics
+- Responsive Excellence: Mobile-first design that scales beautifully across all devices
 
 ## Business Impact
 Currently powering e-commerce operations processing $2M+ in monthly transactions, with measurable improvements in operational efficiency and customer satisfaction.
@@ -196,18 +196,18 @@ The platform has demonstrated remarkable results:
     longDescription: `A next-generation content creation platform that harnesses the power of artificial intelligence to revolutionize digital marketing workflows. This sophisticated system doesn't just generate content—it understands brand voice, audience preferences, and platform nuances to create compelling, conversion-focused marketing materials.
 
 ## Revolutionary Features
-- **Adaptive Brand Intelligence**: Advanced AI that learns and replicates unique brand voices with remarkable accuracy
-- **Cross-Platform Optimization**: Automatically adapts content for Twitter, LinkedIn, Instagram, Facebook, and emerging platforms
-- **Content Strategy Engine**: AI-driven insights for optimal posting times, hashtag strategies, and audience targeting
-- **Performance Prediction**: Machine learning models that forecast content performance before publication
-- **Creative Collaboration Hub**: Streamlined workflows for teams with intelligent approval processes and version control
+- Adaptive Brand Intelligence: Advanced AI that learns and replicates unique brand voices with remarkable accuracy
+- Cross-Platform Optimization: Automatically adapts content for Twitter, LinkedIn, Instagram, Facebook, and emerging platforms
+- Content Strategy Engine: AI-driven insights for optimal posting times, hashtag strategies, and audience targeting
+- Performance Prediction: Machine learning models that forecast content performance before publication
+- Creative Collaboration Hub: Streamlined workflows for teams with intelligent approval processes and version control
 
 ## Technical Excellence
-- **Edge-First Architecture**: Built on Next.js 14 with App Router for lightning-fast global performance
-- **AI Integration**: Sophisticated prompt engineering with OpenAI GPT-4 and custom fine-tuned models
-- **Scalable Infrastructure**: PostgreSQL with advanced indexing and Prisma ORM for complex query optimization
-- **Real-time Systems**: Redis-powered caching and WebSocket connections for collaborative editing
-- **Global Deployment**: Vercel edge functions ensuring sub-100ms response times worldwide
+- Edge-First Architecture: Built on Next.js 14 with App Router for lightning-fast global performance
+- AI Integration: Sophisticated prompt engineering with OpenAI GPT-4 and custom fine-tuned models
+- Scalable Infrastructure: PostgreSQL with advanced indexing and Prisma ORM for complex query optimization
+- Real-time Systems: Redis-powered caching and WebSocket connections for collaborative editing
+- Global Deployment: Vercel edge functions ensuring sub-100ms response times worldwide
 
 ## Measurable Success
 Trusted by 500+ businesses ranging from startups to Fortune 500 companies:
@@ -238,19 +238,19 @@ Trusted by 500+ businesses ranging from startups to Fortune 500 companies:
     longDescription: `A revolutionary collaboration platform built from the ground up to address the evolving needs of distributed teams. This isn't just another messaging app—it's a comprehensive digital workspace that adapts to how modern teams actually work, combining the best aspects of communication, project management, and knowledge sharing.
 
 ## Unified Collaboration Experience
-- **Intelligent Messaging**: Context-aware conversations with AI-powered summaries and action item extraction
-- **Immersive Video Collaboration**: High-quality video calls with virtual backgrounds, noise cancellation, and collaborative whiteboards
-- **Smart File Ecosystem**: Version-controlled file sharing with real-time collaborative editing and automated backup
-- **Adaptive Project Management**: Kanban boards that evolve with your workflow, featuring dependency tracking and automated progress updates
-- **Knowledge Intelligence**: AI-powered search that understands context and finds information across all conversations and documents
+- Intelligent Messaging: Context-aware conversations with AI-powered summaries and action item extraction
+- Immersive Video Collaboration: High-quality video calls with virtual backgrounds, noise cancellation, and collaborative whiteboards
+- Smart File Ecosystem: Version-controlled file sharing with real-time collaborative editing and automated backup
+- Adaptive Project Management: Kanban boards that evolve with your workflow, featuring dependency tracking and automated progress updates
+- Knowledge Intelligence: AI-powered search that understands context and finds information across all conversations and documents
 
 ## Cutting-Edge Technology Stack
-- **Modern Frontend**: React 18 with TypeScript, featuring Suspense and concurrent rendering for optimal performance
-- **Scalable Backend**: Node.js with Express, designed for horizontal scaling with microservices architecture
-- **Real-time Infrastructure**: Socket.IO with Redis clustering for instant message delivery across global regions
-- **Advanced Video Technology**: WebRTC with custom SFU implementation supporting up to 50 participants
-- **Flexible Data Layer**: MongoDB with advanced aggregation pipelines for complex analytics and reporting
-- **Enterprise Storage**: AWS S3 with CloudFront CDN ensuring 99.99% availability and global edge caching
+- Modern Frontend: React 18 with TypeScript, featuring Suspense and concurrent rendering for optimal performance
+- Scalable Backend: Node.js with Express, designed for horizontal scaling with microservices architecture
+- Real-time Infrastructure: Socket.IO with Redis clustering for instant message delivery across global regions
+- Advanced Video Technology: WebRTC with custom SFU implementation supporting up to 50 participants
+- Flexible Data Layer: MongoDB with advanced aggregation pipelines for complex analytics and reporting
+- Enterprise Storage: AWS S3 with CloudFront CDN ensuring 99.99% availability and global edge caching
 
 ## Enterprise-Ready Performance
 Powering productivity for 2,500+ teams across 40+ countries:
@@ -280,18 +280,18 @@ Powering productivity for 2,500+ teams across 40+ countries:
     longDescription: `An intelligent fitness ecosystem that goes beyond simple tracking to become your personal health coach. This progressive web application leverages cutting-edge machine learning to understand your unique fitness patterns and provides personalized guidance that adapts to your lifestyle, preferences, and goals.
 
 ## Intelligent Health Ecosystem
-- **AI-Powered Coaching**: Machine learning algorithms that learn from your workouts and provide personalized training programs
-- **Comprehensive Nutrition Intelligence**: Smart food logging with AI-powered meal suggestions and macro optimization
-- **Adaptive Goal Setting**: Dynamic goal adjustment based on progress, lifestyle changes, and seasonal patterns
-- **Biometric Integration**: Seamless connection with wearables and health devices for holistic health monitoring
-- **Social Motivation Network**: Community features that create accountability and celebrate achievements
+- AI-Powered Coaching: Machine learning algorithms that learn from your workouts and provide personalized training programs
+- Comprehensive Nutrition Intelligence: Smart food logging with AI-powered meal suggestions and macro optimization
+- Adaptive Goal Setting: Dynamic goal adjustment based on progress, lifestyle changes, and seasonal patterns
+- Biometric Integration: Seamless connection with wearables and health devices for holistic health monitoring
+- Social Motivation Network: Community features that create accountability and celebrate achievements
 
 ## Advanced Technology Implementation
-- **Progressive Web Excellence**: Native app-like experience with offline functionality and instant loading
-- **Client-Side Machine Learning**: TensorFlow.js models that provide real-time recommendations without data privacy concerns
-- **Offline-First Architecture**: IndexedDB implementation ensuring your data is always available, even without internet
-- **Intelligent Visualization**: Interactive Chart.js dashboards that reveal patterns and insights in your fitness journey
-- **Smart Notifications**: Context-aware reminders and motivational messages delivered through service workers
+- Progressive Web Excellence*: Native app-like experience with offline functionality and instant loading
+- Client-Side Machine Learning: TensorFlow.js models that provide real-time recommendations without data privacy concerns
+- Offline-First Architecture: IndexedDB implementation ensuring your data is always available, even without internet
+- Intelligent Visualization: Interactive Chart.js dashboards that reveal patterns and insights in your fitness journey
+- Smart Notifications: Context-aware reminders and motivational messages delivered through service workers
 
 ## Real-World Impact
 Transforming lives across the globe with measurable results:

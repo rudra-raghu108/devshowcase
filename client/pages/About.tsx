@@ -36,16 +36,16 @@ export default function About() {
 
   const experience = [
     {
-      role: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      period: "2022 - Present",
+      role: "Frontend Developer",
+      company: "SRM",
+      period: "2024 - Present",
       description:
         "Leading development of modern web applications using React and TypeScript.",
     },
     {
       role: "Full Stack Developer",
       company: "StartupCo",
-      period: "2020 - 2022",
+      period: "2020 - 2024",
       description:
         "Built scalable web applications from concept to deployment.",
     },
@@ -84,7 +84,7 @@ export default function About() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <MapPin className="h-5 w-5" />
-                Based in San Francisco, CA
+                Based in INDIA
               </CardTitle>
               <CardDescription>
                 Full Stack Developer & Tech Enthusiast
@@ -92,7 +92,7 @@ export default function About() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="leading-relaxed">
-                I'm a passionate full stack developer with over 5 years of
+                I'm a passionate full stack developer with over 12 Months of
                 experience building modern web applications. I specialize in
                 React, TypeScript, and Node.js, with a keen interest in creating
                 user-friendly interfaces and scalable backend systems.
@@ -108,7 +108,7 @@ export default function About() {
               <div className="flex flex-wrap gap-3 pt-4">
                 <Button variant="outline" size="sm" asChild>
                   <a
-                    href="https://github.com"
+                    href="ttps://github.com/rudra-raghu108"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gap-2"
@@ -119,7 +119,7 @@ export default function About() {
                 </Button>
                 <Button variant="outline" size="sm" asChild>
                   <a
-                    href="https://linkedin.com"
+                    href="www.linkedin.com/in/rudra-raghuwanshi-8b76ab240"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gap-2"
@@ -129,7 +129,7 @@ export default function About() {
                   </a>
                 </Button>
                 <Button variant="outline" size="sm" asChild>
-                  <a href="mailto:hello@devshowcase.com" className="gap-2">
+                  <a href="mailto:rudra.raghuwanshi013@gmail.com" className="gap-2">
                     <Mail className="h-4 w-4" />
                     Email
                   </a>
@@ -199,7 +199,7 @@ export default function About() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="gap-2">
-                <a href="mailto:hello@devshowcase.com">
+                <a href="mailto:rudra.raghuwanshi013@gmail.com">
                   <Mail className="h-4 w-4" />
                   Get in Touch
                 </a>

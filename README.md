@@ -2,8 +2,7 @@
 
 A modern, responsive blogging platform built with React, TypeScript, and TailwindCSS. BlogSpace provides a clean and intuitive interface for sharing development insights, showcasing projects, and exploring cutting-edge web technologies.
 
-<img width="1919" height="1024" alt="image" src="https://github.com/user-attachments/assets/60a6f617-d706-4164-b82a-01f5cc568be1" />
-
+<img width="1919" height="1024" alt="Screenshot 2025-09-09 211456" src="https://github.com/user-attachments/assets/10300a4a-1f12-4dc9-b532-db639a30da72" />
 
 ## ✨ Features
 

@@ -1,14 +1,19 @@
 import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, LogIn } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useAuth } from "@/contexts/AuthContext";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import AuthDialog from "./AuthDialog";
+import UserMenu from "./UserMenu";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
+  const { isAuthenticated } = useAuth();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAuthDialogOpen, setIsAuthDialogOpen] = useState(false);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -55,7 +60,22 @@ const Navbar = () => {
           </div>
 
           {/* Right side buttons - Absolute positioned to right */}
-          <div className="absolute right-0 flex items-center space-x-4">
+          <div className="absolute right-0 flex items-center space-x-2">
+            {/* Auth Button or User Menu */}
+            {isAuthenticated ? (
+              <UserMenu />
+            ) : (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsAuthDialogOpen(true)}
+                className="gap-2"
+              >
+                <LogIn className="h-4 w-4" />
+                <span className="hidden sm:inline">Sign In</span>
+              </Button>
+            )}
+
             {/* Theme Toggle */}
             <Button
               variant="ghost"
@@ -111,6 +131,12 @@ const Navbar = () => {
           </div>
         )}
       </div>
+
+      {/* Auth Dialog */}
+      <AuthDialog
+        isOpen={isAuthDialogOpen}
+        onClose={() => setIsAuthDialogOpen(false)}
+      />
     </nav>
   );
 };

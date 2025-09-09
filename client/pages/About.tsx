@@ -92,7 +92,7 @@ export default function About() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="leading-relaxed">
-                I'm a passionate full stack developer with over 12 Months of
+                I'm a passionate full stack developer with over 5+ year of
                 experience building modern web applications. I specialize in
                 React, TypeScript, and Node.js, with a keen interest in creating
                 user-friendly interfaces and scalable backend systems.
@@ -108,7 +108,7 @@ export default function About() {
               <div className="flex flex-wrap gap-3 pt-4">
                 <Button variant="outline" size="sm" asChild>
                   <a
-                    href="ttps://github.com/rudra-raghu108"
+                    href="https://github.com/rudra-raghu108"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gap-2"
